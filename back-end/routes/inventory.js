@@ -14,7 +14,7 @@ router.get("/:inventoryId", (req, res) => {
   if (inventory) {
     res.json(inventory);
   } else {
-    res.status(400).send({ false: "could not find item" });
+    res.status(400).send("could not find item");
   }
 });
 
