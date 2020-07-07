@@ -1,0 +1,20 @@
+.cta {
+  height: 48px;
+  padding: 16px;
+  color: $white;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: $primary;
+  border: none;
+  border-radius: $default-button-radius;
+  cursor: pointer;
+
+  @include breakpoint ('from-tablet') {
+    font-size: 14px;
+  }
+
+  &:hover {
+    background: $primary-dark;
+  }
+}

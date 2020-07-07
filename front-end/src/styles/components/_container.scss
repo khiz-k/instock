@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  @include breakpoint ('from-tablet') {
+    padding: 0 24px;
+  }
+
+  @include breakpoint ('desktop') {
+    padding: 0 180px;
+  }
+}

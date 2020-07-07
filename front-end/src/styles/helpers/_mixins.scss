@@ -1,0 +1,143 @@
+// responsive breakpoints
+// @param {string} $value
+
+@mixin breakpoint ($value, $min-value: null) {
+
+  @if $value == 'phone' {
+    @media only screen and (max-width: 320px) { @content; }
+  }
+
+  @else if $value == 'to-tablet' {
+    @media only screen and (max-width: 1199px) { @content }
+  }
+
+  @else if $value == 'tablet' {
+    @media only screen and (min-width: 768px) and (max-width: 1199px) { @content }
+  }
+
+  @else if $value == 'from-tablet' {
+    @media only screen and (min-width: 768px) { @content }
+  }
+
+  @else if $value == 'desktop' {
+    @media only screen and (min-width: 1200px) { @content }
+  }
+
+  @else if $min-value != null {
+    @media only screen and (min-width: $min-value) and (max-width: $value){ @content }
+  }
+
+  @else {
+    @media only screen and (max-width: $value) { @content; }
+  }
+}
+
+// grid
+// @param {unit} $gutter-x
+// @param {unit} $gutter-y
+
+@mixin row  ($gutter-x: 24px, $gutter-y: null) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: $gutter-x / -2;
+  margin-right: $gutter-x /-2;
+  @if $gutter-y != null {
+    margin-bottom: $gutter-y;
+  }
+
+  & > * {
+    padding-left: $gutter-x / 2;
+    padding-right: $gutter-x / 2;
+  }
+}
+
+@mixin col ($width: auto) {
+  width: $width;
+}
+
+// Evenly space child elements horizontally
+// @param {unit} $gutter - Margin between `*`
+
+@mixin evenly-space-children($gutter) {
+  & > *:not(:last-child) {
+    margin-right: $gutter;
+  }
+}
+
+// typography
+// @param {string} $tag - HTML element equivalent
+// @param {string} $breakpoint - Value from breakpoint mixin
+// @param {unit} $weight
+// @param (string) $style
+
+@mixin font ($tag, $breakpoint, $weight: null,  $style: null) {
+
+  // header 1
+  @if $tag == 'h1' {
+    @if $breakpoint == 'phone' {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    @else if $breakpoint == 'desktop' {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
+  // header 2
+  @if $tag == 'h2' {
+    @if $breakpoint == 'phone' {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @else if $breakpoint == 'desktop' {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  // header 3
+  @if $tag == 'h3' {
+    @if $breakpoint == 'phone' {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    @else if $breakpoint == 'desktop' {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  // header 5
+  @if $tag == 'h5' {
+    @if $breakpoint == 'phone' {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    @else if $breakpoint == 'desktop' {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  // paragraph
+  @if $tag ==  'p' {
+    @if $breakpoint == 'phone' {
+      font-size: 13px;
+      line-height: 18px;
+    }
+    @else if $breakpoint == 'desktop' {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  // optional properties
+  @if $weight != null {
+    font-weight: $weight;
+  }
+  @if $style != null {
+    font-style: $style;
+  }
+}
+
