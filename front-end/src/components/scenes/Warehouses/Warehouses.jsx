@@ -2,8 +2,8 @@ import React from 'react';
 
 const Locations = () => {
   return (
-    <main id="locations" className="container locations">
-      rendered from Locations.jsx
+    <main id="warehouses" className="container warehouses">
+      rendered from Warehouses.jsx
     </main>
   )
 }
