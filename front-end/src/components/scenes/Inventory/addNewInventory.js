@@ -1,4 +1,5 @@
 import React from 'react';
+import "../../../styles/components/_newInventoryform.scss"
 import Modal from 'react-modal';
 
 const NewInventory = () => {
@@ -34,7 +35,7 @@ const NewInventory = () => {
                         </div>
                         <div className="newBox__form--element3">
                             <label>ITEM DESCRIPTION</label>
-                            <textarea name="description"></textarea>
+                            <textarea name="description" placeholder="(Optional)"></textarea>
                         </div>
                         <div className="newBox__form--buttons">
                             <link>CANCEL</link>
