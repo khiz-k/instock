@@ -29,7 +29,7 @@ class AddInv extends Component {
         this.setState({[e.target.name]: e.target.value });
     }
 
-
+  
 
 
     render(){
@@ -40,7 +40,7 @@ class AddInv extends Component {
                     <h1>Create New</h1>
                 </div>
                 <div className="newBox__form">
-                    <form onSubmit={this.handleSubmit}>
+                    <form name="" onSubmit={this.handleSubmit}>
                         <div className="newBox__form--element1">
                             <label>PRODUCT</label>
                             <input name="product" placeholder="name" type="text" onChange={this.handleChange}></input>
