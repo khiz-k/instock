@@ -27,15 +27,8 @@ app.post('/inventory', (req, res) => {
     console.log("test")
   
     const {  
-      id,
-      name,
-      description,
-      quantity,
-      lastOrdered,
-      city,
-      country, 
-      isInstock,
-      categories,
+      id, name, description,  quantity, lastOrdered, city,
+      country, isInstock, categories,
       warehouseId} = req.body
 
       if((req.body.name === "" )|| 
@@ -46,16 +39,8 @@ app.post('/inventory', (req, res) => {
      }else{
          res.status(200)
       inventoryList.push({
-        id,
-        name,
-        description,
-        quantity,
-        lastOrdered,
-        city,
-        country, 
-        isInstock,
-        categories,
-        warehouseId
+        id, name, description, quantity,lastOrdered, city,
+         country, isInstock, categories, warehouseId
      
       })
     }
