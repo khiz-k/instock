@@ -2,7 +2,7 @@ import React from 'react';
 import axios from "axios"
 
 
-export default function NewInventoryItem({ handleInvUpload }) {
+export default function AddNewInventory({ handleInvUpload }) {
 
   console.log("herer")
 

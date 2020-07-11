@@ -4,7 +4,7 @@ import Layout from './utils/Layout';
 
 import Warehouses from './components/scenes/Warehouses/Warehouses'
 import Inventory from './components/scenes/Inventory/Inventory'
-import NewInventoryItem from './components/scenes/Inventory/NewInventoryItem'
+import AddNewInventory from './components/scenes/Inventory/AddNewInventory/'
 
 const  App = () => {
   return (
@@ -17,7 +17,7 @@ const  App = () => {
           <Route path="/inventory" component={ Inventory } />
           <Route path="/inventory/:id" component={ Inventory } />
 
-          <Route path="/NewInventoryItem"><NewInventoryItem/></Route>
+          <Route path="/NewInventoryItem"><AddNewInventory/></Route>
         </Switch>
       </Layout>
     </div>
