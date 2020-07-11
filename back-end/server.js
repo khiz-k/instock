@@ -27,15 +27,8 @@ app.post('/inventory', (req, res) => {
     console.log("test")
   
     const {  
-      id,
-      name,
-      description,
-      quantity,
-      lastOrdered,
-      city,
-      country, 
-      isInstock,
-      categories,
+      id, name, description,  quantity, lastOrdered, city,
+      country, isInstock, categories,
       warehouseId} = req.body
 
       if((req.body.name === "" )|| 
@@ -46,16 +39,8 @@ app.post('/inventory', (req, res) => {
      }else{
          res.status(200)
       inventoryList.push({
-        id,
-        name,
-        description,
-        quantity,
-        lastOrdered,
-        city,
-        country, 
-        isInstock,
-        categories,
-        warehouseId
+        id, name, description, quantity,lastOrdered, city,
+         country, isInstock, categories, warehouseId
      
       })
     }
@@ -64,6 +49,39 @@ app.post('/inventory', (req, res) => {
     console.log(inventoryList)
   
   })
+
+
+ 
+app.get('/inventory/:id', (req, res) => {
+
+  const checkStatus = inventoryList.some(item => item.id === req.params.id);
+
+
+  if (checkStatus) {
+    let test = inventoryList.filter(item => item.id === req.params.id);
+    res.json(test[0])
+
+  }else {
+    res.status(400).send("could not find item");
+  }
+
+})
+
+
+app.delete('/inventory/:id', (req, res) => {
+
+  const checkStatus = inventoryList.some(item => item.id === req.params.id);
+
+  if(checkStatus){
+    const itemIndex = inventoryList.findIndex(item => item.id === req.params.id);
+    inventoryList.splice(itemIndex,1)
+    
+    res.send("item deleted")
+
+  }else {
+    res.status(400).send("could not find item");
+  }
+})
 
 
 app.listen(port, () => console.log(`Listening on ${port}`))
