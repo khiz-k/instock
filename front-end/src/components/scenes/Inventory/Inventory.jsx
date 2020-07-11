@@ -1,12 +1,27 @@
 import React, { Component } from "react";
 import Items from "./items";
 import axios from "axios";
+import Modal from './Modal/Modal';
 import SearchIcon from "./atoms/Icon-search.svg";
+import AddInv from "./addInv"
 
 export default class Inventory extends Component {
   state = {
     warehouses: [],
     inventory: [],
+    show: false
+  };
+
+
+  showModal = () =>{
+    this.setState({
+      ...this.state,
+      show: !this.state.show
+    });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
   };
 
   componentDidMount() {
@@ -34,8 +49,12 @@ export default class Inventory extends Component {
   };
 
   render() {
+   
     // if items present in inventory:
     if (this.state.inventory.length >= 1) {
+      // if(!this.props.show){
+      //   return null;
+      // }
         return (
           <>
             <div className="inventory-header">
@@ -59,11 +78,19 @@ export default class Inventory extends Component {
               <span className="inventory-subHeaders__content">Location</span>
               <span className="inventory-subHeaders__content">Quantity</span>
               <span className="inventory-subHeaders__content">Status</span>
+            
             </div>
             <Items
               updateItems={this.updateItems}
               inventory={this.state.inventory}
             />
+            <button type="button" value ="Show Modal" onClick={this.showModal}>
+              +</button>
+        
+            <Modal show={this.state.show}>
+              {<AddInv/>}
+            </Modal>
+            
           </>
         );  
     } else {

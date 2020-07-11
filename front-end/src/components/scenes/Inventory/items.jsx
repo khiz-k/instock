@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Remove from "./remove";
+//import Remove from "./remove";
 import axios from "axios";
 
 export default class Items extends React.Component  {
@@ -32,7 +32,7 @@ export default class Items extends React.Component  {
               <span className="table-row__content--value">{obj.status}</span>
             </div>
           </Link>
-          <Remove />
+          {/* <Remove /> */}
         </section>
       );
     });
