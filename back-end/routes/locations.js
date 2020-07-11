@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const locations = require("../../instock-data/locations.json");
-const inventory = require("../../instock-data/inventory.json");
+const locations = require("../instock-data/locations.json");
+const inventory = require("../instock-data/inventory.json");
 
 router.get("/", (req, res) => {
   res.json(locations);

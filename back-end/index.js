@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const locationsRoute = require("./routes/locations.js");
 const inventoryRoute = require('./routes/inventory.js');
+const InvByWare = require("./routes/InvByWarehouse.js")
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
