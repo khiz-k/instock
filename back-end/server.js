@@ -81,14 +81,6 @@ app.delete('/inventory/:id', (req, res) => {
   }else {
     res.status(400).send("could not find item");
   }
-
-
-
-
-  // else {
-  //   res.status(400).send("could not find item");
-  // }
-
 })
 
 
