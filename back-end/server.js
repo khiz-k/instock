@@ -66,4 +66,21 @@ app.post('/inventory', (req, res) => {
   })
 
 
+ 
+app.get('/inventory/:id', (req, res) => {
+
+  const checkStatus = inventoryList.some(item => item.id === req.params.id);
+
+
+  if (checkStatus) {
+    let test = inventoryList.filter(item => item.id === req.params.id);
+    res.json(test[0])
+
+  }
+
+  else { console.log("notfound") }
+
+})
+
+
 app.listen(port, () => console.log(`Listening on ${port}`))
