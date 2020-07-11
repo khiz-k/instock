@@ -76,11 +76,23 @@ app.get('/inventory/:id', (req, res) => {
     let test = inventoryList.filter(item => item.id === req.params.id);
     res.json(test[0])
 
+  }else {
+    res.status(400).send("could not find item");
   }
 
-  else { console.log("notfound") }
-
 })
+
+
+// app.delete('/inventory/:id', (req, res) => {
+
+//   const itemIndex = inventoryList.findIndex(item => item.id === req.params.id);
+
+
+
+
+//   else { console.log("notfound") }
+
+// })
 
 
 app.listen(port, () => console.log(`Listening on ${port}`))
