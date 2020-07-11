@@ -83,16 +83,28 @@ app.get('/inventory/:id', (req, res) => {
 })
 
 
-// app.delete('/inventory/:id', (req, res) => {
+app.delete('/inventory/:id', (req, res) => {
 
-//   const itemIndex = inventoryList.findIndex(item => item.id === req.params.id);
+  const checkStatus = inventoryList.some(item => item.id === req.params.id);
+
+  if(checkStatus){
+    const itemIndex = inventoryList.findIndex(item => item.id === req.params.id);
+    inventoryList.splice(itemIndex,1)
+    
+    res.send("item deleted")
+
+  }else {
+    res.status(400).send("could not find item");
+  }
 
 
 
 
-//   else { console.log("notfound") }
+  // else {
+  //   res.status(400).send("could not find item");
+  // }
 
-// })
+})
 
 
 app.listen(port, () => console.log(`Listening on ${port}`))
