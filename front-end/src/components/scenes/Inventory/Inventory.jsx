@@ -3,7 +3,9 @@ import Items from "./items";
 import axios from "axios";
 import Modal from './Modal/Modal';
 import SearchIcon from "./atoms/Icon-search.svg";
-import AddInv from "./addInv"
+import AddInv from "./addInv";
+import { ModalProvider } from 'styled-react-modal'
+
 
 export default class Inventory extends Component {
   state = {
