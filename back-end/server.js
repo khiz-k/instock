@@ -74,8 +74,6 @@ app.delete('/warehouses/:id', (req, res) => {
 })
 
 
-
-
 app.get("/inventory", (req, res) => {
   res.json(inventoryList);
 });
