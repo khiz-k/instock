@@ -10,7 +10,7 @@ export default function AddNewInventory({ handleInvUpload }) {
       event.preventDefault();
       const idnum = String(new Date().getTime());
 
-      console.log("atevent")
+  
       let newItem = {
           id:idnum,
           name: event.target.newItemProductName.value,
@@ -24,12 +24,15 @@ export default function AddNewInventory({ handleInvUpload }) {
       };
        axios
        .post('/inventory',newItem )
-       .then(console.log("new item added", newItem))
+        // .then(console.log("new item added", newItem))
 
-
-      // event.target.reset();
-          
+        // event.target.reset();
+             
   }
+           
+        
+   
+  
 
 
   return(
