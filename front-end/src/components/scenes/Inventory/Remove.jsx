@@ -35,9 +35,15 @@ export function delHandler(itemId) {
 
   axios
        .delete(`/inventory/${itemId}` )
-       .then(console.log("item deleted"))
 
+        .then(response => { 
+          console.log("item deleted")
+        })
+        .catch(error => {
+            console.log(error)
+        });
 
        window.location.reload(false);  
+       
   return
 }
