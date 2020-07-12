@@ -4,20 +4,30 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const port = process.env.PORT || process.argv[2] || 8080
 
-const locationsRoute = require("./routes/locations.js");
-const inventoryRoute = require('./routes/inventory.js');
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use("/locations", locationsRoute);
-
-app.use('/inventory', inventoryRoute);
-
-
-
+const warehousesList = require("./instock-data/locations.json");
 const inventoryList = require("./instock-data/inventory.json");
+
+app.get("/warehouses", (req, res) => {
+  res.json(warehousesList);
+});
+
+app.get("/warehouses/:id", (req, res) => {
+  const { id } = req.params;
+  const checkStatus = warehousesList.some(location => location.id === id);
+
+  if (checkStatus) {
+    let warehouse = warehousesList.filter(location => location.id === id);
+    let warehouseInventoryItems = inventoryList.filter(item => item.warehouseId === id);
+    res.json([warehouse, warehouseInventoryItems]);
+  }else {
+    res.status(400).send("could not find warehouse and associated inventory");
+  }
+});
+
 app.get("/inventory", (req, res) => {
   res.json(inventoryList);
 });
