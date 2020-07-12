@@ -51,13 +51,37 @@ app.get("/warehouses/:id/address", (req, res) => {
 })
 
 
+app.post('/warehouses', (req, res) => {
+  const newWarehouse = {
+    ...req.body
+
+  }
+  warehousesList.push(newWarehouse)
+})
+
+
+app.delete('/warehouses/:id', (req, res) => {
+  const { id } = req.params;
+  const checkStatus = warehousesList.some(location => location.id === id);
+
+  if (checkStatus) {
+    const warehouseIndex = warehousesList.findIndex(location => location.id === id);
+    warehousesList.splice(warehouseIndex, 1)
+    res.send("warehouse deleted")
+  } else {
+    res.status(400).send("could not find warehouse");
+  }
+})
+
+
+
+
 app.get("/inventory", (req, res) => {
   res.json(inventoryList);
 });
 
 app.post('/inventory', (req, res) => {
 
-  console.log("test")
 
   const {
     id, name, description, quantity, lastOrdered, city,
@@ -79,7 +103,6 @@ app.post('/inventory', (req, res) => {
   }
 
   res.json(inventoryList)
-  console.log(inventoryList)
 
 })
 
@@ -116,18 +139,6 @@ app.delete('/inventory/:id', (req, res) => {
   }
 })
 
-app.delete('/warehouses/:id', (req, res) => {
-  const { id } = req.params;
-  const checkStatus = warehousesList.some(location => location.id === id);
-
-  if (checkStatus) {
-    const warehouseIndex = warehousesList.findIndex(location => location.id === id);
-    warehousesList.splice(warehouseIndex, 1)
-    res.send("warehouse deleted")
-  } else {
-    res.status(400).send("could not find warehouse");
-  }
-})
 
 
 app.listen(port, () => console.log(`Listening on ${port}`))
