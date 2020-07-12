@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import kebab from "./atoms/Icon-kebab-default.svg";
 import axios from "axios";
-// import Dropdown from 'react-dropdown';
-// import 'react-dropdown/style.css';
-
 
 export default class RemoveButton extends Component {
 
