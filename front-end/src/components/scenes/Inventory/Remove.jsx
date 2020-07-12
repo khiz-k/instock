@@ -33,6 +33,8 @@ export function delHandler(itemId) {
 
   console.log(itemId, "clicked")
 
-  
+  axios
+       .delete(`/inventory/${itemId}` )
+       .then(console.log("item deleted"))
   return
 }
