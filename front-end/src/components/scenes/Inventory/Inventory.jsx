@@ -6,15 +6,9 @@ import SearchIcon from "./atoms/Icon-search.svg";
 
 export default class Inventory extends Component {
   state = {
-    warehouses: [],
-    inventory: [],
+    inventory: []
   };
   componentDidMount() {
-    axios.get("http://localhost:8080/locations").then(res => {
-      this.setState({
-        locations: [res.data]
-      });
-    });
     axios.get("http://localhost:8080/inventory").then(res => {
       this.setState({
         inventory: [res.data]
