@@ -62,7 +62,7 @@
 
 .inventory-subHeaders {
   display: none;
-  color: $base-lighter;
+  color: $base-light;
 
   @include breakpoint("from-tablet") {
     width: calc(100vw - 48px);
