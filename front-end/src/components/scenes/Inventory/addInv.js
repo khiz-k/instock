@@ -155,7 +155,7 @@ export default class AddInv extends Component {
                                     {/* Implment modal switch here */}
                                     {/* <input className="box__2--I" name ="isInstock" type="checkbox" className="switch" onChange={this.handleChange}/> */}
                                     <Switch name ="isInstock" className="react-switch"
-                                    onChange={this.handleChange}
+                                    //onChange={this.handleChange}
                                     isInstock={this.state.isInstock}/>
                                 </div>
                             </div>
