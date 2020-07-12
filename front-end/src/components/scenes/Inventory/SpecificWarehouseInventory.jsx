@@ -6,15 +6,13 @@ import { Link } from "react-router-dom";
 
 export default class SpecificWarehouseInventory extends Component {
   state = {
-    locations: [],
+    warehouse: [],
     inventory: [],
-    warehouse: undefined,
-    products: undefined
   };
   componentDidMount() {
-    axios.get(`http://localhost:5000/locations/${this.props.match.params.id}`).then(res => {
+    axios.get(`http://localhost:5000/warehouses/${this.props.match.params.id}`).then(res => {
       this.setState({
-        locations: [res.data]
+        warehouse: [res.data]
       });
     });
   //   axios.get("http://localhost:8080/inventory").then(res => {
@@ -29,13 +27,13 @@ export default class SpecificWarehouseInventory extends Component {
       });
     });
     axios
-    .get(`http://localhost:5000/locations/${this.props.match.params.id}`)
+    .get(`http://localhost:5000/warehouses/${this.props.match.params.id}`)
     .then(res => {
       this.setState({
         warehouse: res.data[0],
-        products: [res.data[1]]
+        inventory: [res.data[1]]
       });
-      console.log(this.state.products);
+      console.log(this.state.inventory);
     });
   }
   // updateItems = () => {
@@ -49,7 +47,7 @@ export default class SpecificWarehouseInventory extends Component {
   // };
   updateItems = () => {
     setTimeout(() => {
-      axios.get(`http://localhost:5000/locations/${this.props.match.params.id}`).then(res => {
+      axios.get(`http://localhost:5000/warehouses/${this.props.match.params.id}`).then(res => {
       this.setState({
         inventory: [res.data]
       });
@@ -59,11 +57,11 @@ export default class SpecificWarehouseInventory extends Component {
   // updateItems = () => {
   //   setTimeout(() => {
   //     axios
-  //       .get(`http://localhost:5000/locations/${this.props.match.params.id}`)
+  //       .get(`http://localhost:5000/warehouse/${this.props.match.params.id}`)
   //       .then(result => {
   //         console.log(result.data);
   //         this.setState({
-  //           products: [result.data[1]]
+  //           inventory: [result.data[1]]
   //         });
   //       });
   //   }, 60);
@@ -76,7 +74,7 @@ export default class SpecificWarehouseInventory extends Component {
           <>
             <div className="container">
               <div className="inventory-header">
-                <Link to="/locations">
+                <Link to="/warehouse">
                   <img
                     alt="arrow"
                     className="header-container__image"
