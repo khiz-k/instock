@@ -5,7 +5,6 @@
   @include breakpoint ('from-tablet') {
     width: calc(100vw - 48px);
     display: flex;
-    margin-bottom: 40px;
   }
 
   @include breakpoint ('desktop') {
@@ -34,12 +33,18 @@
   }
 }
 
-.inventory-subHeaders__content {
+.inventory-subHeaders-warehouse {
   color: $base-light;
   text-transform: uppercase;
   font-size: 13px;
 }
-  
+
+.table-row__content--subHeader {
+  color: $base-light;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
 .warehouse-products {
 
   @include breakpoint ('from-tablet') {
@@ -49,9 +54,15 @@
 }
 
 .title-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-self: flex-start;
+  
+  @include breakpoint ('from-tablet') {
+    border-bottom: solid 2px $base-light;
+    margin-bottom: 32px;
+  }
 
   .arrow-container {
     display: flex;
@@ -60,7 +71,7 @@
   }
 }
 
-.inventory-header {
+.warehouse-inventory-header {
   display: flex;
   flex-direction: column;
 }
