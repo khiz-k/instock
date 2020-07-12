@@ -102,6 +102,9 @@
     display: flex;
     flex-direction: column;
 
+
+
+
     @include breakpoint ('from-tablet') {
       margin-top: unset;
       position: relative;
@@ -114,6 +117,9 @@
     @include breakpoint ('desktop') {
       justify-content: space-between;
     }
+
+
+
 
     &__content {
       display: flex;
@@ -191,3 +197,25 @@
   transform: scale(1.2);
   transition: 1s;
 }
+
+
+
+.dropdown-handle{
+  display: flex;
+  flex-direction: row-reverse;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f1f1f1;
+  width: 161px;
+  height: 44px;
+  // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+ .dropdown-handle:hover .dropdown-content {display: block;}
+

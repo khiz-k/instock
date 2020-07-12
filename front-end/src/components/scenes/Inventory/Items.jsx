@@ -31,7 +31,7 @@ export default class Items extends React.Component  {
               <span className="table-row__content--value">{obj.status}</span>
             </div>
           </div>
-          <Remove />
+          <Remove itemId={obj.id}/>
         </section>
       );
     });
