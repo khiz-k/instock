@@ -1,44 +1,67 @@
 .warehouse-info {
-    width: calc(100vw - 32px);
-    margin: $center;
-  
-    &__content {
-      margin-bottom: 24px;
-  
-      &-key {
-        // add font styling
-      }
-  
-      &-container {
-        margin-top: 16px;
-        // add font styling
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
-  
+  width: calc(100vw - 32px);
+  margin: $center;
+
   @include breakpoint ('from-tablet') {
-    .warehouse-info {
-      width: calc(100vw - 48px);
-      display: flex;
-      margin-bottom: 40px;
-  
-      &__content {
-        width: 50%;
-        margin-bottom: unset;
-      }
-    }
-  
-    .warehouse-products {
-      background-color: $alabaster;
-      padding: 40px 0;
-    }
+    width: calc(100vw - 48px);
+    display: flex;
+    margin-bottom: 40px;
   }
-  
+
   @include breakpoint ('desktop') {
-    .warehouse-info {
-      width: calc(100vw - 360px);
+    width: calc(100vw - 360px);
+  }
+
+
+  &__content {
+    margin-bottom: 24px;
+
+    @include breakpoint ('from-tablet') {
+      width: 50%;
+      margin-bottom: unset;
+    }
+
+    &-key {
+      color: $base-light;
+    }
+
+    &-container {
+      margin-top: 16px;
+      // add font styling
+      display: flex;
+      flex-direction: column;
     }
   }
+}
+
+.inventory-subHeaders__content {
+  color: $base-light;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+  
+.warehouse-products {
+
+  @include breakpoint ('from-tablet') {
+    background-color: $base-lightest;
+    padding: 40px 0;
+  }
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+
+  .arrow-container {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+  }
+}
+
+.inventory-header {
+  display: flex;
+  flex-direction: column;
+}
   
