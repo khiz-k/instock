@@ -4,6 +4,7 @@ import axios from "axios";
 import Modal from './Modal/Modal';
 import SearchIcon from "./atoms/Icon-search.svg";
 import AddInv from "./addInv";
+import "../../../styles/pages/_inventory.scss"
 import { ModalProvider } from 'styled-react-modal'
 
 
@@ -89,7 +90,8 @@ export default class Inventory extends Component {
             <button type="button" value ="Show Modal" onClick={this.showModal}>
               +</button>
         
-            <Modal show={this.state.show}>
+            <Modal show={this.state.show}
+                    onClose={this.showModal}>
               {<AddInv/>}
             </Modal>
             

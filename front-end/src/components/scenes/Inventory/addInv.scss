@@ -1,0 +1,150 @@
+.container{
+    color: blueviolet;
+    font-size: larger;
+    margin: 8% 7%;
+}
+.newBox{
+    margin: 5% 6%;
+    &__heading{
+        margin-bottom: 6%;
+    }
+    &__form{
+        display: flex;
+        &--element1{
+            display: flex;
+            .box{
+                display: flex;
+                margin-top: 20px;
+                &__1{
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 40px;
+                    &--L{
+                    
+                    }
+                    &--I{
+
+                    }
+                }
+                &__2{
+                    margin-right: 10%;
+                    display: flex;
+                    flex-direction: column;
+                    &--L{
+                    
+                    }
+                    &--I{
+
+                    }
+                }
+            }
+
+        }
+        &--element2{
+            display: flex;
+            .box{
+                display: flex;
+                margin-top: 20px;
+               
+                &__1{
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 40px;
+                    &--L{
+                    
+                    }
+                    &--I{
+
+                    }
+                }
+                &__2{
+                    margin-right: 10%;
+                    display: flex;
+                    flex-direction: column;
+                    &--L{
+                    
+                    }
+                    &--I{
+
+                    }
+                }
+            }
+
+        }
+        &--element3{
+            display: flex;
+            .box{
+                display: flex;
+                margin-top: 20px;
+               
+                &__1{
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 40px;
+                    &--L{
+                    
+                    }
+                    &--I{
+
+                    }
+                }
+                &__2{
+                    margin-right: 10%;
+                    display: flex;
+                    flex-direction: column;
+                    &--L{
+                    
+                    }
+                    &--I{
+
+                    }
+                }
+            }
+
+        }
+        &--element4{
+            display: flex;
+            .box{
+                display: flex;
+               
+                &__1{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 20px;
+                    &--L{
+                    
+                    }
+                    &--I{
+
+                    }
+                }
+                &__2{
+                    margin-right: 10%;
+                    display: flex;
+                    flex-direction: column;
+                    &--L{
+                    
+                    }
+                    &--I{
+                        width:480px ;
+                        height: 80px;
+                    }
+                }
+            }
+
+        }
+        &--buttons{
+            display: flex;
+            justify-content: flex-end;
+            margin-top:40px;
+            .box{
+            display: flex;
+            
+            }
+        }
+
+    }
+
+
+}
+
