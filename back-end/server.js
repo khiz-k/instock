@@ -24,7 +24,7 @@ app.get("/warehouses/:id", (req, res) => {
     let warehouseInventoryItems = inventoryList.filter(item => item.warehouseId === id);
     res.json([warehouse, warehouseInventoryItems]);
   }else {
-    res.status(400).send("could not find warehouse and associated inventory");
+    res.status(404).send("could not find warehouse and associated inventory");
   }
 });
 
