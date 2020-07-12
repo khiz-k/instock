@@ -10,13 +10,14 @@ export default class SpecificWarehouseInventory extends Component {
     inventory: []
   };
   componentDidMount() {
-    axios.get(`http://localhost:8080/warehouses/W4`)
+    axios.get(`/warehouses/W5`)
     .then(res => {
       this.setState({
         warehouse: res.data[0],
         inventory: [res.data[1]]
       });
-      console.log(res.data);
+      console.log(this.state.warehouse[0]);
+   
     });
   }
   updateItems = () => {
