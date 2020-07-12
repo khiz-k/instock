@@ -72,7 +72,7 @@ app.get('/inventory/:id', (req, res) => {
     res.json(test[0])
 
   }else {
-    res.status(400).send("could not find item");
+    res.status(404).send("could not find item");
   }
 
 })
