@@ -93,5 +93,18 @@ app.delete('/inventory/:id', (req, res) => {
   }
 })
 
+app.delete('/warehouses/:id', (req, res) => {
+  const { id } = req.params;
+  const checkStatus = warehousesList.some(location => location.id === id);
+
+  if(checkStatus){
+    const warehouseIndex = warehousesList.findIndex(location => location.id === id);
+    warehousesList.splice(warehouseIndex,1)
+    res.send("warehouse deleted")
+  }else {
+    res.status(400).send("could not find warehouse");
+  }
+})
+
 
 app.listen(port, () => console.log(`Listening on ${port}`))
