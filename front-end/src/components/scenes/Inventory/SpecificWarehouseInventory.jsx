@@ -34,7 +34,7 @@ export default class SpecificWarehouseInventory extends Component {
       this.state.inventory !== undefined && this.state.inventory.length > 0) {
         return (
           <>
-            <div className="inventory-header">
+            <div className="inventory-header warehouse-inventory-header">
               <div className="title-container">
                 <Link to="/warehouse" className="arrow-container">
                   <img
@@ -52,18 +52,18 @@ export default class SpecificWarehouseInventory extends Component {
                   <span className="warehouse-info__content-key">Address</span>
                   <div className="warehouse-info__content-container">
                     <span className="warehouse-info__content-container--value">
-                      {this.state.warehouse[0].name}
+                      {this.state.warehouse[0].address.street}
                     </span>
                     <span className="warehouse-info__content-container--value">
-                      {this.state.warehouse[0].name}
+                      {this.state.warehouse[0].address.suite}
                     </span>
                   </div>
                   <div className="warehouse-info__content-container">
                     <span className="warehouse-info__content-container--value">
-                      {this.state.warehouse[0].name}
+                      {this.state.warehouse[0].address.location}
                     </span>
                     <span className="warehouse-info__content-container--value">
-                      {this.state.warehouse[0].name}
+                      {this.state.warehouse[0].address.areacode}
                     </span>
                   </div>
                 </div>
@@ -71,18 +71,18 @@ export default class SpecificWarehouseInventory extends Component {
                   <span className="warehouse-info__content-key">Contact</span>
                   <div className="warehouse-info__content-container">
                     <span className="warehouse-info__content-container--value">
-                    {this.state.warehouse[0].name}
+                    {this.state.warehouse[0].contact.name}
                     </span>
                     <span className="warehouse-info__content-container--value">
-                      {this.state.warehouse[0].name}
+                      {this.state.warehouse[0].contact.position}
                     </span>
                   </div>
                   <div className="warehouse-info__content-container">
                     <span className="warehouse-info__content-container--value">
-                      {this.state.warehouse[0].name}
+                      {this.state.warehouse[0].contact.phone}
                     </span>
                     <span className="warehouse-info__content-container--value">
-                      {this.state.warehouse[0].name}
+                      {this.state.warehouse[0].contact.email}
                     </span>
                   </div>
                 </div>
