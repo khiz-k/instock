@@ -2,9 +2,10 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Layout from './utils/Layout';
 
-import Warehouses from './components/scenes/Warehouses/Warehouses'
-import Inventory from './components/scenes/Inventory/Inventory'
-import AddNewInventory from './components/scenes/Inventory/AddNewInventory/'
+import Warehouses from './components/scenes/Warehouses/Warehouses';
+import Inventory from './components/scenes/Inventory/Inventory';
+import ItemDetails from './components/scenes/Inventory/molecules/ItemDetails';
+import AddNewInventory from './components/scenes/Inventory/AddNewInventory/';
 
 const  App = () => {
   return (
@@ -15,9 +16,8 @@ const  App = () => {
           <Route path="/warehouses" component={ Warehouses } />
           <Route path="/warehouses/:id" component={ Warehouses } />
           <Route path="/inventory" component={ Inventory } />
-          <Route path="/inventory/:id" component={ Inventory } />
-
-           <Route path="/SpecificWarehouseInventory"><SpecificWarehouseInventory/></Route> {/*placeholder, will put into the /warehouses/:id path*/}
+          {/* temp route TODO: resolve */}
+          <Route path="/item-details" component={ ItemDetails } />
           <Route path="/NewInventoryItem"><AddNewInventory/></Route>
         </Switch>
       </Layout>
