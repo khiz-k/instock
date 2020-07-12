@@ -3,11 +3,11 @@ const router = express.Router();
 const locations = require("../instock-data/locations.json");
 const inventory = require("../instock-data/inventory.json");
 
-router.get("/", (req, res) => {
+router.get("/warehouses", (req, res) => {
   res.json(locations);
 });
 
-router.get("/:id", (req, res) => {
+router.get("/warehouses/:id", (req, res) => {
   // reading error correct:
   const { id } = req.params;
   
