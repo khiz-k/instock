@@ -10,10 +10,14 @@
     "axios": "^0.19.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-button-slider": "^1.2.0",
     "react-dom": "^16.13.1",
     "react-dropdown": "^1.7.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-switch": "^5.0.1",
+    "styled-components": "^5.1.1",
+    "styled-react-modal": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
