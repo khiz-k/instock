@@ -7,7 +7,8 @@ import AddWarehouseModal from "./AddWarehouseModal.jsx";
 
 export default class Warehouses extends Component {
   state = {
-    warehouses: []
+    warehouses: [],
+    mobile: false
   };
   componentDidMount() {
     // /inventory needs to be replaced with warehouses and its respective info to fill the table rows
@@ -26,6 +27,11 @@ export default class Warehouses extends Component {
     });
     }, 60);
   };
+  mobileModal = () => {
+    this.setState({
+      mobile: !this.state.mobile
+    });
+  }
   render() {
     // if warehouses present:
     if (this.state.warehouses.length > 0) {
@@ -58,7 +64,7 @@ export default class Warehouses extends Component {
               warehouses={this.state.warehouses}
             />
             </div>
-            <AddWarehouseModal updateItems={this.updateItems} mobile={this.state.mobile} changeMobile={this.mobileModal} />
+            <AddWarehouseModal updateWarehouses={this.updateWarehouses} mobile={this.state.mobile} changeMobile={this.mobileModal} />
           </>
         );  
     } else {
