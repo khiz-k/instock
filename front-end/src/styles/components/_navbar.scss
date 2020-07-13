@@ -2,7 +2,6 @@
   min-height: 80px;
   color: $white;
   background-color: $base-darkest;
- 
 
   @include breakpoint ('from-tablet') {
     height: 80px;
