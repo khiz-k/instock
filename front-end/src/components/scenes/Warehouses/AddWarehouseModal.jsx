@@ -15,42 +15,38 @@ export default class AddWarehouseModal extends React.Component {
       this.setState({ active: "none" });
     };
 
-    // MELIKA POST REQUEST, MAIN EDIT HERE:
-    post = () => {
-      // VALIDATION
-      if (
-        this.name.value !== "" &&
-        this.address.value !== "" &&
-        this.contact.value !== "" &&
-        this.location.value !== "" &&
-        this.position.value !== "" &&
-        this.number.value !== ""
-      ) {
-        axios.post("http://localhost:8080/warehouses", {
-          name: this.name.value,
-          address: this.address.value,
-          contact: this.contact.value,
+   post = () => {
+    // VALIDATION
+    if (
+      this.name.value === “” ||
+      this.address.value === “” ||
+      this.contact.value === “” ||
+      this.location.value === “” ||
+      this.position.value === “” ||
+      this.number.value === “”
+    ) {
+      alert(“Please fill out all fields”);
+    } else {
+      const idnum = String(new Date().getTime());
+      let newHouse = {
+        id:  idnum,
+        name: this.name.value,
+        address: {
+          street: this.address.value,
           location: this.location.value,
-          position: this.position.value,
-          number: this.number.value,
+        },
+        contact: {
+          name: this.name.value,
+          title: this.position.value,
+          phone: this.number.value,
           email: this.email.value,
-          categories: this.category.value
-        }).then(res => {
-          this.props.updateWarehouses();
-          this.name.value = ""
-          this.address.value = ""
-          this.contact.value = ""
-          this.position.value = ""
-          this.number.value = ""
-          this.email.value = ""
-          this.category.value = ""
-          
-        })
-      } else {
-        alert("Please fill out all fields");
+        },
+        inventoryCategories: this.category.value
       }
-    };
-    
+      axios.post(‘warehouses’, newHouse)
+      window.location.reload(false);
+    }
+  };
     
     render() {
       const position = this.props.mobile === true ? "none": "fixed"
