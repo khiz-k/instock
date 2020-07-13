@@ -35,7 +35,6 @@ export default class Items extends React.Component  {
         </section>
       );
     });
-    //links to item summary:
     return <>{table}</>;
   }
 }
