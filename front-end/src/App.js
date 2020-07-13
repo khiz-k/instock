@@ -24,11 +24,7 @@ const  App = () => {
 
            <Route exact path="/warehouses/:id"
               render={props => <SpecificWarehouseInventory {...props} />}>
-              
               </Route>
-
-
-
           {/* <Route path="/warehouses/:id"><SpecificWarehouseInventory/></Route> */}
            {/*placeholder, will put into the /warehouses/:id path*/}
           <Route path="/NewInventoryItem"><AddNewInventory/></Route>

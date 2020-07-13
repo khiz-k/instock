@@ -142,7 +142,7 @@
         }
       }
       &--bold {
-        // add font styling
+        font-weight: 900;
         margin-bottom: 16px;
 
         @include breakpoint("from-tablet") {
