@@ -4,9 +4,8 @@ import Remove from "./Remove";
 
 export default class Items extends React.Component  {
   render() {
-    const items = this.props.inventory[0];
     const table =
-    items.map(obj => {
+    this.props.inventory[0].map(obj => {
       return (
         <section key={obj.id} className="table">
           <div className="table-row">
@@ -29,7 +28,7 @@ export default class Items extends React.Component  {
             </div>
             <div className="table-row__content">
               <span className="table-row__content--subHeader">Status</span>
-              <span className="table-row__content--value">{obj.isInstock ? 'In Stock' : 'Out of Stock'}</span>
+              <span className="table-row__content--value">{obj.status}</span>
             </div>
           </div>
           <Remove itemID={obj.id}/>
