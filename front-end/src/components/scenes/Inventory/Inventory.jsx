@@ -50,14 +50,14 @@ export default class Inventory extends Component {
               <span className="inventory-subHeaders__content">Last Ordered</span>
               <span className="inventory-subHeaders__content">Location</span>
               <span className="inventory-subHeaders__content">Quantity</span>
-              <span className="inventory-subHeaders__content">Status</span>
+              <span className="inventory-subHeaders__content status-sub">Status</span>
             </div>
             <Items
               updateItems={this.updateItems}
               inventory={this.state.inventory}
             />
-            {/* add NewInventoryItem / modal here */}
             </div>
+            {/* AddNewInventory modal here */}
           </>
         );  
     } else {

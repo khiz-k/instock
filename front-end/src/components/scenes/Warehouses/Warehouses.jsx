@@ -1,11 +1,69 @@
-import React from 'react';
+// Khizar wrote this
+import React, { Component } from "react";
+import WarehousesByRow from "./WarehousesByRow";
+import axios from "axios";
+import SearchIcon from "./atoms/Icon-search.svg";
+import AddWarehouseModal from "./AddWarehouseModal.jsx";
 
-const Locations = () => {
-  return (
-    <main id="warehouses" className="container warehouses">
-      rendered from Warehouses.jsx
-    </main>
-  )
+export default class Warehouses extends Component {
+  state = {
+    warehouses: []
+  };
+  componentDidMount() {
+    // /inventory needs to be replaced with warehouses and its respective info to fill the table rows
+    axios.get("http://localhost:8080/inventory").then(res => {
+      this.setState({
+        warehouses: [res.data]
+      });
+    });
+  }
+  updateWarehouses = () => {
+    setTimeout(() => {
+      axios.get("http://localhost:8080/inventory").then(res => {
+      this.setState({
+        warehouses: [res.data]
+      });
+    });
+    }, 60);
+  };
+  render() {
+    // if warehouses present:
+    if (this.state.warehouses.length > 0) {
+        return (
+          <>
+          <div className="container">
+            <div className="inventory-header">
+              <h1 className="inventory-header__title">Warehouses</h1>
+              <div className="inventory-header__searchbar">
+                <img
+                  alt = "search"
+                  className="inventory-header__searchbar-icon"
+                  src={SearchIcon}
+                />
+                <input
+                  className="inventory-header__searchbar-input"
+                  type="text"
+                  placeholder="Search"
+                ></input>
+              </div>
+            </div>          
+            <div className="inventory-subHeaders">
+              <span className="inventory-subHeaders__content">Warehouse</span>
+              <span className="inventory-subHeaders__content">Contact</span>
+              <span className="inventory-subHeaders__content">Contact Information</span>
+              <span className="inventory-subHeaders__content categories-sub">Categories</span>
+            </div>
+            <WarehousesByRow
+              updateWarehouses={this.updateWarehouses}
+              warehouses={this.state.warehouses}
+            />
+            </div>
+            <AddWarehouseModal updateItems={this.updateItems} mobile={this.state.mobile} changeMobile={this.mobileModal} />
+          </>
+        );  
+    } else {
+      // if no items in the inventory:
+      return <h1>Loading...</h1>;
+    }
+  }
 }
-
-export default Locations;

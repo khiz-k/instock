@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Remove from "./Remove";
+import arrow from "./atoms/Icon-arrow-right.svg";
 
-export default class Items extends React.Component  {
+export default class WarehousesByRow extends React.Component  {
   render() {
     const table =
-    this.props.inventory[0].map(obj => {
+    this.props.warehouses[0].map(obj => {
       return (
         <section key={obj.id} className="table">
           <div className="table-row">
-            <Link className="table-row__content item-hover" to={`/inventory/${obj.id}`}>
+            <Link className="table-row__content item-hover" to={`/${obj.id}`}>
               <span className="table-row__content--subHeader">Item</span>
               <span className="table-row__content--bold">{obj.item}</span>
               <span className="table-row__content--value">{obj.name}</span>
@@ -26,12 +26,12 @@ export default class Items extends React.Component  {
               <span className="table-row__content--subHeader">Quantity</span>
               <span className="table-row__content--value">{obj.quantity}</span>
             </div>
-            <div className="table-row__content">
-              <span className="table-row__content--subHeader">Status</span>
-              <span className="table-row__content--value">{obj.status}</span>
+          </div>
+          <div className="table-row__remove">
+            <div className="table-row__remove--dropdown-handle">
+              <Link to ={`/warehouses/${obj.id}`}><input  className="table-row__remove-button" alt="arrow" type="image" src={arrow} /></Link>
             </div>
           </div>
-          <Remove itemID={obj.id}/>
         </section>
       );
     });
