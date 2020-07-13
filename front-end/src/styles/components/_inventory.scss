@@ -124,7 +124,6 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 24px;
-    
 
       @include breakpoint("from-tablet") {
         align-items: space-between;
@@ -158,7 +157,7 @@
       }
       &--value {
         // add font styling
-        cursor: pointer;
+
         @include breakpoint("from-tablet") {
           margin-bottom: unset;
           // add tablet font-sizing
