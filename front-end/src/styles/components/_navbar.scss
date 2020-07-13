@@ -1,3 +1,88 @@
 .navbar {
+  min-height: 80px;
+  color: $white;
+  background-color: $base-darkest;
 
+  @include breakpoint ('from-tablet') {
+    height: 80px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    @include breakpoint ('from-tablet') {
+      flex-direction: row;
+      @include evenly-space-children(56px);
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+      flex: 1 0;
+
+      @include breakpoint ('from-tablet') {
+        flex: unset;
+      }
+    }
+  }
+
+  &__start {
+    margin: 16px 0;
+
+    & img {
+      width: 128px;
+      max-width: unset;
+    }
+  }
+
+  &__end {
+    width: 100vw;
+    height: 100%;
+  }
+
+  &__nav {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    @include breakpoint ('from-tablet') {
+      width: fit-content;
+      @include evenly-space-children(56px);
+    }
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      height: 100%;
+      @include font ('p', 'phone', 600);
+      color: $base-light;
+
+      @include breakpoint ('from-tablet') {
+        width: 80px;
+        @include font ('p', 'desktop', 600);
+      }
+
+      & .active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: $white;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid $white;
+        cursor: default;
+      }
+
+      & > a {
+        padding-bottom: 16px;;
+      }
+    }
+  }
 }
+
