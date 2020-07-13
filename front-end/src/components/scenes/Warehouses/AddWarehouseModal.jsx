@@ -15,17 +15,16 @@ export default class AddWarehouseModal extends React.Component {
       this.setState({ active: "none" });
     };
 
-   post = () => {
-    // VALIDATION
+    post = () => {
     if (
-      this.name.value === “” ||
-      this.address.value === “” ||
-      this.contact.value === “” ||
-      this.location.value === “” ||
-      this.position.value === “” ||
-      this.number.value === “”
+      this.name.value === "" ||
+      this.address.value === "" ||
+      this.contact.value === "" ||
+      this.location.value === "" ||
+      this.position.value === "" ||
+      this.number.value === ""
     ) {
-      alert(“Please fill out all fields”);
+      alert("Please fill out all fields");
     } else {
       const idnum = String(new Date().getTime());
       let newHouse = {
@@ -43,7 +42,7 @@ export default class AddWarehouseModal extends React.Component {
         },
         inventoryCategories: this.category.value
       }
-      axios.post(‘warehouses’, newHouse)
+      axios.post('warehouses', newHouse)
       window.location.reload(false);
     }
   };
@@ -63,56 +62,56 @@ export default class AddWarehouseModal extends React.Component {
                 <h2 className="modal__content-header">Add New</h2>
                 <div className="modal__content-container">
                     <div className="modal__content-container-input">
-                        <h4 className="modal__content-subheader">Warehouse</h4>
-                          {/*e.target doesn't work for some reason, used ref but needs fix:*/}
-                        <input
-                            className="modal__content-input"
-                            placeholder="Name &amp; ID"
-                            ref={ref => (this.name = ref)}/>
+                    <h4 className="modal__content-subheader">Warehouse</h4>
+                      {/*e.target doesn't work for some reason, used ref but needs fix:*/}
+                    <input
+                        className="modal__content-input"
+                        placeholder="Name &amp; ID"
+                        ref={ref => (this.name = ref)}/>
                     </div>
                     <div className="modal__content-middle">
-                        <div className="modal__content-container-input">
-                        <h4 className="modal__content-subheader">Address</h4>
+                    <div className="modal__content-container-input">
+                    <h4 className="modal__content-subheader">Address</h4>
+                    <input
+                        className="modal__content-input"
+                        placeholder="Enter Address"
+                        ref={ref => (this.address = ref)}/>
+                    </div>
+                    <div className="modal__content-container-input">
+                    <h4 className="modal__content-subheader ">Location</h4>
+                    <input
+                    className="modal__content-input"
+                    placeholder="Enter Location"
+                    ref={ref => (this.location = ref)}/>
+                    </div>
+                    <div className="modal__content-container-input">
+                    <h4 className="modal__content-subheader ">Contact Name</h4>
+                    <input
+                    className="modal__content-input"
+                    placeholder="Enter Name"
+                    ref={ref => (this.contact = ref)}/>
+                    </div>
+                    <div className="modal__content-container-input">
+                    <h4 className="modal__content-subheader">Position</h4>
+                    <input
+                        className="modal__content-input"
+                        placeholder="Enter Position"
+                        ref={ref => (this.position = ref)}/>
+                    </div>
+                    <div className="modal__content-container-input">
+                        <h4 className="modal__content-subheader">Phone Number</h4>
                         <input
-                            className="modal__content-input"
-                            placeholder="Enter Address"
-                            ref={ref => (this.address = ref)}/>
-                        </div>
-                        <div className="modal__content-container-input">
-                            <h4 className="modal__content-subheader ">Location</h4>
-                            <input
-                            className="modal__content-input"
-                            placeholder="Enter Location"
-                            ref={ref => (this.location = ref)}/>
-                        </div>
-                        <div className="modal__content-container-input">
-                            <h4 className="modal__content-subheader ">Contact Name</h4>
-                            <input
-                            className="modal__content-input"
-                            placeholder="Enter Name"
-                            ref={ref => (this.contact = ref)}/>
-                        </div>
-                        <div className="modal__content-container-input">
-                            <h4 className="modal__content-subheader">Position</h4>
-                            <input
-                                className="modal__content-input"
-                                placeholder="Enter Position"
-                                ref={ref => (this.position = ref)}/>
-                        </div>
-                        <div className="modal__content-container-input">
-                                <h4 className="modal__content-subheader">Phone Number</h4>
-                                <input
-                                className="modal__content-input"
-                                placeholder="(000) 000 - 0000"
-                                ref={ref => (this.number = ref)}/>
-                        </div>
-                        <div className="modal__content-container-input">
-                                <h4 className="modal__content-subheader">Email</h4>
-                                <input
-                                className="modal__content-input"
-                                placeholder="email@instock.com"
-                                ref={ref => (this.email = ref)}/>
-                        </div>
+                        className="modal__content-input"
+                        placeholder="(000) 000 - 0000"
+                        ref={ref => (this.number = ref)}/>
+                    </div>
+                    <div className="modal__content-container-input">
+                        <h4 className="modal__content-subheader">Email</h4>
+                        <input
+                        className="modal__content-input"
+                        placeholder="email@instock.com"
+                        ref={ref => (this.email = ref)}/>
+                    </div>
                     </div>
                     <div className="modal__content-container-input categories-container">
                         <h4 className="modal__content-subheader categories-content">Categories</h4>
