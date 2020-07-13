@@ -6,6 +6,7 @@ import Warehouses from './components/scenes/Warehouses/Warehouses';
 import Inventory from './components/scenes/Inventory/Inventory';
 import AddNewInventory from './components/scenes/Inventory/AddNewInventory/';
 import SpecificWarehouseInventory from './components/scenes/Warehouses/SpecificWarehouseInventory';
+import ItemDetails from './components/scenes/Inventory/molecules/ItemDetails.jsx';
 
 const  App = () => {
   return (
@@ -13,10 +14,14 @@ const  App = () => {
       <Layout>
         <Switch>
           <Route path="/" exact component={ Warehouses } />
+          <Route path="/inventory" exact component={ Inventory } />
+          <Route path="/inventory/:id" component={ ItemDetails } />
           <Route exact path="/warehouses" component={ Warehouses } />
           {/* <Route path="/warehouses/:id" component={ Warehouses } /> */}
-          <Route path="/inventory" component={ Inventory } />
-           {/* <Route path="/inventory/:id" component={ ItemDetails } /> */}
+          <Route path="/inventory" exact component={ Inventory } />
+          <Route path="/inventory/:id" component={ ItemDetails } />
+
+
            <Route exact path="/warehouses/:id"
               render={props => <SpecificWarehouseInventory {...props} />}>
               </Route>
