@@ -4,8 +4,8 @@ import Layout from './utils/Layout';
 
 import Warehouses from './components/scenes/Warehouses/Warehouses';
 import Inventory from './components/scenes/Inventory/Inventory';
+import ItemDetails from './components/scenes/Inventory/molecules/ItemDetails';
 import AddNewInventory from './components/scenes/Inventory/AddNewInventory/';
-import SpecificWarehouseInventory from './components/scenes/Inventory/SpecificWarehouseInventory';
 
 const  App = () => {
   return (
