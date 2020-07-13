@@ -56,8 +56,9 @@ export default class AddInv extends Component {
             //The post request for the form would go here
             axios.post('http://localhost:8080/inventory', this.state)
             .then(res=>{
-       
+                
         })
+      
         }
     }
     
