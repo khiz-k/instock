@@ -54,9 +54,28 @@ app.get("/warehouses/:id/address", (req, res) => {
 app.post('/warehouses', (req, res) => {
   const newWarehouse = {
     ...req.body
-
   }
-  warehousesList.push(newWarehouse)
+
+  if (
+
+    req.body.name === "" ||
+    req.body.street === "" ||
+    req.body.location === "" ||
+    req.body.name === "" ||
+    req.body.position === "" ||
+    req.body.phone === "" ||
+    req.body.email === "" ||
+    req.body.inventoryCategories === ""
+
+  ) {
+    res.status(400).send("Please fill all fields");
+  } else {
+    res.status(200)
+    warehousesList.push(newWarehouse)
+  }
+
+  res.json(warehousesList)
+
 })
 
 
