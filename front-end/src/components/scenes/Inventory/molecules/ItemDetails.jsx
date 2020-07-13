@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import IconBackArrow from './atoms/Icon-back-arrow.svg';
+import IconBackArrow from '../atoms/Icon-back-arrow.svg';
 
 // TODO: connect to backend
 const data = {

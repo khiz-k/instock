@@ -9,7 +9,7 @@ export default class Items extends React.Component  {
       return (
         <section key={obj.id} className="table">
           <div className="table-row">
-            <Link className="table-row__content item-hover" to={`/${obj.id}`}>
+            <Link className="table-row__content item-hover" to={`/inventory/${obj.id}`}>
               <span className="table-row__content--subHeader">Item</span>
               <span className="table-row__content--bold">{obj.item}</span>
               <span className="table-row__content--value">{obj.name}</span>

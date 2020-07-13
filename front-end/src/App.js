@@ -15,9 +15,8 @@ const  App = () => {
           <Route path="/" exact component={ Warehouses } />
           <Route path="/warehouses" component={ Warehouses } />
           <Route path="/warehouses/:id" component={ Warehouses } />
-          <Route path="/inventory" component={ Inventory } />
-          {/* temp route TODO: resolve */}
-          <Route path="/item-details" component={ ItemDetails } />
+          <Route path="/inventory" exact component={ Inventory } />
+          <Route path="/inventory/:id" component={ ItemDetails } />
           <Route path="/NewInventoryItem"><AddNewInventory/></Route>
         </Switch>
       </Layout>

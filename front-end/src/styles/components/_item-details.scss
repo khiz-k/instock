@@ -49,6 +49,7 @@
   &__title {
     @include font ('h1', 'phone', 700);
     margin: 0;
+    cursor: pointer;
 
     @include breakpoint ('from-tablet') {
       @include font ('h1', 'desktop')
