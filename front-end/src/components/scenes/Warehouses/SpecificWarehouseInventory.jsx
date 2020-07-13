@@ -11,7 +11,7 @@ export default class SpecificWarehouseInventory extends Component {
   };
   componentDidMount() {
     // specific warehouse id to replace W4
-    axios.get(`http://localhost:8080/warehouses/W4`)
+    axios.get(`http://localhost:8080/warehouses/${this.props.match.params.id}`)
     .then(res => {
       this.setState({
         warehouse: res.data[0],
