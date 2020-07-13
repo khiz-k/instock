@@ -16,7 +16,7 @@ const  App = () => {
           <Route path="/warehouses" component={ Warehouses } />
           <Route path="/warehouses/:id" component={ Warehouses } />
           <Route path="/inventory" component={ Inventory } />
-          <Route path="/inventory/:id" component={ ItemDetails } />
+           {/* <Route path="/inventory/:id" component={ ItemDetails } /> */}
 
           <Route path="/SpecificWarehouseInventory"><SpecificWarehouseInventory/></Route> {/*placeholder, will put into the /warehouses/:id path*/}
           <Route path="/NewInventoryItem"><AddNewInventory/></Route>
