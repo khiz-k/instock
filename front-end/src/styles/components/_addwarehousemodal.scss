@@ -24,11 +24,10 @@
             border-radius: 5px;
             padding: 0 3.125%;
             width: 576px;
-            height: 640px;
+            height: 700px;
 
             &-btn-container {
                 display: flex;
-                // keeps cancel and save button aligned at a specific base so they don't appear higher or lower than each other, could not fix via centering
                 align-items: baseline;
                 flex-direction: row-reverse;
                 width: 100%;
