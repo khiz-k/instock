@@ -1,37 +1,41 @@
 import React, { Component } from 'react';
-import Switch from "react-switch";
-import "./addInv.scss"
+import "../../../styles/components/addInv.scss";
+import "../../../styles/components/_switch.scss"
+const axios = require('axios');
+
 
 
 const initialState ={
-    product: "",
+    name: "",
     lastOrdered:"",
     city:"",
     country:"",
     quantity:"",
-    isInstock: false,
+    isInstock: Boolean,
     description:"",
-    productError: "",
+    nameError: "",
     lastOrderedError:"",
     cityError:"",
     countryError:"",
-    quantityError:null
+    quantityError:''
 
 }
 
 
 export default class AddInv extends Component {
+ 
     constructor(){
+        
         super()
         this.state ={
-            product: "",
+            name: "",
             lastOrdered:"",
             city:"",
             country:"",
             quantity:"",
-            isInstock: false,
+            isInstock:false,
             description:"",
-            productError: "",
+            nameError: "",
             lastOrderedError:"",
             cityError:"",
             countryError:"",
@@ -50,8 +54,13 @@ export default class AddInv extends Component {
             }
            
             //The post request for the form would go here
+            axios.post('http://localhost:8080/inventory', this.state)
+    .then(res=>{
+       
+        })
         }
     }
+    
 
     handleChange=(e)=>{
         e.preventDefault()
@@ -59,15 +68,17 @@ export default class AddInv extends Component {
         this.setState({[e.target.name]: e.target.value })
     }
 
+  
+
     validateForm=()=>{
-        let productError ="";
+        let nameError ="";
         let lastOrderedError="";
         let cityError="";
         let countryError="";
         let quantityError=NaN;
 
-        if(!this.state.product){
-            productError="Please enter a product";
+        if(!this.state.name){
+            nameError="Please enter a product";
         }
         if(!this.state.lastOrdered){
             lastOrderedError="Please choose a date";
@@ -82,17 +93,20 @@ export default class AddInv extends Component {
             quantityError="Please enter a number";
         }
 
-        if(productError|| lastOrderedError || cityError || countryError||quantityError){
-            this.setState({productError,lastOrderedError,cityError,quantityError})
+        if(nameError|| lastOrderedError || cityError || countryError||quantityError){
+            this.setState({nameError,lastOrderedError,cityError,quantityError})
             return false;
         }
         return true
 
     };
-
+   
+    
     render(){
 
+        
         return(
+
 
         <div className="Container">
             <div className="newBox">
@@ -105,7 +119,7 @@ export default class AddInv extends Component {
                             <div className= "box">
                                 <div className="box__1">
                                     <label className="box__1--L">PRODUCT</label>
-                                    <input className="box__1--I" name="product" placeholder="name" type="text" onChange={this.handleChange}/>
+                                    <input className="box__1--I" name="name" placeholder="name" type="text" onChange={this.handleChange}/>
                                     <div style={{ fontSize: 9, color: "red" }}>
                                         {this.state.productError}
                                     </div>
@@ -130,7 +144,8 @@ export default class AddInv extends Component {
                                 </div>
                                 <div className="box__2">
                                     <label className="box__2--L">COUNTRY</label>
-                                    <select className="box__2--I" name="country" placeholder="Canada" class="form-control" onChange={this.handleChange}>
+                                    <select className="box__2--I" name="country" placeholder="" class="form-control" onChange={this.handleChange}>
+                                        <option value=""></option>
                                         <option value="Ontario">Ontario</option>
                                         <option value="Canada">Canada</option>
                                         <option value="United States of America">United States of America</option>
@@ -151,19 +166,20 @@ export default class AddInv extends Component {
                                     </div>
                                 </div>
                                 <div className="box__2">
-                                    <label  className="box__2--L">STATUS</label>
+                                    <label  className="box__2--L">STATUS
                                     {/* Implment modal switch here */}
-                                    {/* <input className="box__2--I" name ="isInstock" type="checkbox" className="switch" onChange={this.handleChange}/> */}
-                                    <Switch name ="isInstock" className="react-switch"
-                                    //onChange={this.handleChange}
-                                    isInstock={this.state.isInstock}/>
+                                    <div className="switch">
+                                     <input className="switch__input" name ="isInstock" type="checkbox" value='true'onChange={this.handleChange}/> 
+                                     <span className="switch__input--slider"></span>
+                                   </div>
+                                </label>
                                 </div>
                             </div>
                         </div>
                         <div className="newBox__form--element4">
                             <div className="box__1">
                             <label className="box__1--L">ITEM DESCRIPTION</label>
-                            <textarea className="box__1--I" name="description" placeholder="(Optional)" cols="60" rows="5" onChange={this.handleChange}/>
+                            <textarea className="box__1--I" name="description" placeholder="(Optional)"  onChange={this.handleChange}/>
                             </div>
                         </div>
                         <div className="newBox__form--buttons">

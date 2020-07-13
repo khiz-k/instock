@@ -1,0 +1,226 @@
+.inventory-header {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 32px);
+  margin: $center;
+  margin-top: 32px;
+
+  @include breakpoint("from-tablet") {
+    width: calc(100vw - 48px);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  @include breakpoint("desktop") {
+    width: calc(100vw - 360px);
+    margin: 48px auto;
+  }
+
+  &__title {
+    // add font styling
+    margin-bottom: 16px;
+
+    @include breakpoint("from-tablet") {
+      //add font styling
+      margin-bottom: unset;
+    }
+  }
+
+  &__searchbar {
+    width: 252px;
+    height: 48px;
+    background-color: $base-lightest;
+    border: 1px solid $base-lighter;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      height: 20px;
+      padding: 0 16px;
+    }
+
+    &-input {
+      width: 200px;
+      border: none;
+      background-color: $base-lightest;
+      height: 46px;
+      padding-left: 5px;
+    }
+
+    &-input::placeholder {
+      color: $base-darkest;
+    }
+  }
+
+  &__searchbar::placeholder {
+    color: $base-darkest;
+  }
+}
+
+.inventory-subHeaders {
+  display: none;
+  color: $base-light;
+
+  @include breakpoint("from-tablet") {
+    width: calc(100vw - 48px);
+    margin: $center;
+    display: flex;
+    justify-content: space-between;
+
+    &__content {
+      width: 100px;
+      // add font styling
+    }
+  }
+
+  @include breakpoint("desktop") {
+    width: calc(100vw - 360px);
+    justify-content: space-between;
+  }
+}
+
+.table {
+  width: calc(100vw - 32px);
+  margin: $center;
+  position: relative;
+
+  @include breakpoint("from-tablet") {
+    width: calc(100vw - 48px);
+    height: 100px;
+  }
+
+  @include breakpoint("desktop") {
+    width: calc(100vw - 360px);
+  }
+
+  &-row {
+    border-bottom: 1px solid $base-lighter;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint("from-tablet") {
+      margin-top: unset;
+      position: relative;
+      padding: 24px 0;
+      height: 100px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include breakpoint("desktop") {
+      justify-content: space-between;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+
+      @include breakpoint("from-tablet") {
+        align-items: space-between;
+        justify-content: center;
+        margin-bottom: unset;
+        width: 100px;
+      }
+
+      &__content:first-child {
+        @include breakpoint("from-tablet") {
+          width: 224px;
+        }
+      }
+
+      &--subHeader {
+        margin-bottom: 16px;
+        // add font styling
+        @include breakpoint("from-tablet") {
+          // add tablet font styling
+          display: none;
+        }
+      }
+      &--bold {
+        // add font styling
+        margin-bottom: 16px;
+
+        @include breakpoint("from-tablet") {
+          margin-bottom: unset;
+          // add tablet font styling
+        }
+      }
+      &--value {
+        // add font styling
+
+        @include breakpoint("from-tablet") {
+          margin-bottom: unset;
+          // add tablet font-sizing
+        }
+      }
+    }
+
+    &__remove {
+      position: absolute;
+      z-index: 2;
+      right: 8px;
+      top: 4px;
+      // height: 72px;
+      // width: 161px;
+      //  display: flex;
+      // flex-direction: column;
+      // justify-content: right;
+      // align-items: right;
+      // align-content: right;
+
+      @include breakpoint("from-tablet") {
+        top: 36px;
+        right: 0;
+      }
+
+      &-button {
+        height: 24px;
+        margin-right: 8px;
+        padding: 5px;
+        outline: none;
+      }
+
+      &--dropdown-handle {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: right;
+        align-content: right;
+        align-items: right;
+
+        cursor: pointer;
+      }
+
+      &--dropdown-content {
+        &__options {
+          text-align: left;
+          position: relative;
+
+          top: 24px;
+          left: 14px;
+
+          font-family: "Avenir Next";
+          font-size: 16px;
+          padding: 10px;
+          position: relative;
+          background-color: white;
+          border: 1px solid $base-lighter;
+          border-radius: 4px;
+          width: 161px;
+          height: 44px;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+.item-hover:hover {
+  opacity: 0.5;
+  transform: scale(1.01);
+  transition: 1s;
+}

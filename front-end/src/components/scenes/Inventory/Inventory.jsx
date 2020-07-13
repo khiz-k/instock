@@ -1,46 +1,38 @@
+// Khizar wrote this
 import React, { Component } from "react";
-import Items from "./items";
+import Items from "./Items";
 import axios from "axios";
-import Modal from './Modal/Modal';
+import Switch from "react-switch";
 import SearchIcon from "./atoms/Icon-search.svg";
+import Modal from "./Modal/Modal";
 import AddInv from "./addInv";
-import "../../../styles/pages/_inventory.scss"
 import { ModalProvider } from 'styled-react-modal'
 
 
 export default class Inventory extends Component {
   state = {
-    warehouses: [],
     inventory: [],
     show: false
   };
 
-
-  showModal = () =>{
+  showModal=() =>{
     this.setState({
       ...this.state,
       show: !this.state.show
-    });
-  };
+    })
+  }
 
-  hideModal = () => {
-    this.setState({ show: false });
-  };
+  hideModal = ()=>{
+    this.setState({show:false});
 
+  }
   componentDidMount() {
-    axios.get("http://localhost:8080/locations").then(res => {
-      this.setState({
-        locations: [res.data]
-      });
-    });
-
     axios.get("http://localhost:8080/inventory").then(res => {
       this.setState({
         inventory: [res.data]
       });
     });
   }
-
   updateItems = () => {
     setTimeout(() => {
       axios.get("http://localhost:8080/inventory").then(res => {
@@ -50,16 +42,12 @@ export default class Inventory extends Component {
     });
     }, 60);
   };
-
   render() {
-   
     // if items present in inventory:
-    if (this.state.inventory.length >= 1) {
-      // if(!this.props.show){
-      //   return null;
-      // }
+    if (this.state.inventory.length > 0) {
         return (
           <>
+          <div className="container">
             <div className="inventory-header">
               <h1 className="inventory-header__title">Inventory</h1>
               <div className="inventory-header__searchbar">
@@ -81,20 +69,20 @@ export default class Inventory extends Component {
               <span className="inventory-subHeaders__content">Location</span>
               <span className="inventory-subHeaders__content">Quantity</span>
               <span className="inventory-subHeaders__content">Status</span>
-            
             </div>
             <Items
               updateItems={this.updateItems}
               inventory={this.state.inventory}
             />
-            <button type="button" value ="Show Modal" onClick={this.showModal}>
-              +</button>
-        
+            {/* add NewInventoryItem / modal here */}
+            <buttom type="button" value ="Show Modal" onClick={this.showModal}>+</buttom>
+
             <Modal show={this.state.show}
-                    onClose={this.showModal}>
+             onClose={this.showModal}>
               {<AddInv/>}
             </Modal>
-            
+
+            </div>
           </>
         );  
     } else {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./_modal.scss";
+import "../../../../styles/components/_modal.scss";
 //import "../../../../styles/components/_newInventoryform.scss"
 //import Modal from 'react-modal';
 
@@ -15,8 +15,11 @@ export default class Modal extends Component {
         <div className="modal">
             <section className="modal__main">
                 {this.props.children}
-                <button classname="one" onClick={this.onClose}>cancel</button>
+            <div className="modal__main--active">
+                <p classname="one" onClick={this.onClose}>cancel</p>
+            </div>
             </section>
+            
         </div>
      
     )
