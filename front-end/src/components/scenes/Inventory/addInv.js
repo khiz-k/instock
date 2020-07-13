@@ -55,7 +55,7 @@ export default class AddInv extends Component {
            
             //The post request for the form would go here
             axios.post('http://localhost:8080/inventory', this.state)
-    .then(res=>{
+            .then(res=>{
        
         })
         }
@@ -121,7 +121,7 @@ export default class AddInv extends Component {
                                     <label className="box__1--L">PRODUCT</label>
                                     <input className="box__1--I" name="name" placeholder="name" type="text" onChange={this.handleChange}/>
                                     <div style={{ fontSize: 9, color: "red" }}>
-                                        {this.state.productError}
+                                        {this.state.nameError}
                                     </div>
                                 </div>
                                 <div className="box__2">
@@ -167,8 +167,10 @@ export default class AddInv extends Component {
                                 </div>
                                 <div className="box__2">
                                     <label  className="box__2--L">STATUS
+                                    
                                     {/* Implment modal switch here */}
                                     <div className="switch">
+                                    
                                      <input className="switch__input" name ="isInstock" type="checkbox" value='true'onChange={this.handleChange}/> 
                                      <span className="switch__input--slider"></span>
                                    </div>

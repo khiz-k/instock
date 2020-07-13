@@ -42,11 +42,15 @@ button{
     background-color:#002F5F;
     color: #FFFFFF;
     position: relative;
-    left: 70%;
+    left: 30%;
+    border-radius: 5%;
     bottom: 08.5%;
+    border: none;
     margin: 0;
     padding: 0;
-    font-size: larger;
+    font-size: normal;
+    height: 48px;
+    width: 160px;
     @include breakpoint("phone"){
         width: 220px;
         height: 48px;
@@ -64,10 +68,12 @@ button{
 
 p{
     color: #002F5F;
-    position: relative;
+    position: absolute;
     left: 36%;
-    bottom: 28.5%;
+    bottom: 9.9%;
     margin: 8% 0;
     padding: 0;
     font-size: larger;
-    width:50px ;}
+    width:50px;
+
+}
