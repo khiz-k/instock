@@ -15,10 +15,8 @@ const  App = () => {
           <Route path="/" exact component={ Warehouses } />
           <Route path="/warehouses" component={ Warehouses } />
           <Route path="/warehouses/:id" component={ Warehouses } />
-          <Route path="/inventory" component={ Inventory } />
-          <Route path="/inventory/:id" component={ Inventory } />
-
-           <Route path="/SpecificWarehouseInventory"><SpecificWarehouseInventory/></Route> {/*placeholder, will put into the /warehouses/:id path*/}
+          <Route path="/inventory" exact component={ Inventory } />
+          <Route path="/inventory/:id" component={ ItemDetails } />
           <Route path="/NewInventoryItem"><AddNewInventory/></Route>
         </Switch>
       </Layout>
