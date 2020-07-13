@@ -11,7 +11,7 @@ export default class Warehouses extends Component {
   };
   componentDidMount() {
     // /inventory needs to be replaced with warehouses and its respective info to fill the table rows
-    axios.get("http://localhost:8080/inventory").then(res => {
+    axios.get("/warehouses").then(res => {
       this.setState({
         warehouses: [res.data]
       });
@@ -19,7 +19,7 @@ export default class Warehouses extends Component {
   }
   updateWarehouses = () => {
     setTimeout(() => {
-      axios.get("http://localhost:8080/inventory").then(res => {
+      axios.get("/warehouses").then(res => {
       this.setState({
         warehouses: [res.data]
       });
