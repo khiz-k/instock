@@ -2,30 +2,12 @@
 import React, { Component } from "react";
 import Items from "./Items";
 import axios from "axios";
-import Switch from "react-switch";
 import SearchIcon from "./atoms/Icon-search.svg";
-import Modal from "./Modal/Modal";
-import AddInv from "./addInv";
-import { ModalProvider } from 'styled-react-modal'
-
 
 export default class Inventory extends Component {
   state = {
-    inventory: [],
-    show: false
+    inventory: []
   };
-
-  showModal=() =>{
-    this.setState({
-      ...this.state,
-      show: !this.state.show
-    })
-  }
-
-  hideModal = ()=>{
-    this.setState({show:false});
-
-  }
   componentDidMount() {
     axios.get("http://localhost:8080/inventory").then(res => {
       this.setState({
@@ -74,15 +56,8 @@ export default class Inventory extends Component {
               updateItems={this.updateItems}
               inventory={this.state.inventory}
             />
-            {/* add NewInventoryItem / modal here */}
-            <buttom className="addSign" type="button" value ="Show Modal" onClick={this.showModal}>+</buttom>
-
-            <Modal show={this.state.show}
-             onClose={this.showModal}>
-              {<AddInv/>}
-            </Modal>
-
             </div>
+            {/* AddNewInventory modal here */}
           </>
         );  
     } else {
@@ -91,4 +66,3 @@ export default class Inventory extends Component {
     }
   }
 }
-
