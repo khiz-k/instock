@@ -60,7 +60,7 @@
   align-self: flex-start;
   
   @include breakpoint ('from-tablet') {
-    border-bottom: solid 2px $base-light;
+    border-bottom: solid 2px $base-lighter;
     margin-bottom: 32px;
   }
 
