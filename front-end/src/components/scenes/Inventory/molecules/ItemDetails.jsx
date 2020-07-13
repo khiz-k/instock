@@ -46,7 +46,9 @@ class ItemDetails extends Component {
             <img src={ IconBackArrow } alt="" />
             <h1 className="item-details__title">{ item.name }</h1>
           </div>
-          <button className="item-details__stock-tag">{ this.stockStatus() }</button>
+          <button className={ `item-details__stock-tag ${ item.isInStock ? '' : 'item-details__stock-tag--in-stock' }` }>
+            { this.stockStatus() }
+          </button>
         </div>
         <div className="divider item-details__divider"></div>
         <div className="item-details__body">

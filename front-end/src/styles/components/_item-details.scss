@@ -120,6 +120,11 @@
     background-color: $base-lighter;
     border: none;
     border-radius: $default-button-radius;
+
+    &--in-stock {
+      color: $white;
+      background-color: $success-light;
+    }
   }
 
   &__btn {
