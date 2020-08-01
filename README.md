@@ -1,6 +1,6 @@
 # InStock 
 
-Project no. 4 of the BrainStation 2020 Full-Time Online Web Development curriculum.
+Inventory management system web app
 
 ## Project Overview
 
