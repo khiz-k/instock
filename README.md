@@ -1,6 +1,6 @@
 # InStock 
 
-Inventory management system web app
+Inventory management system in the form of a web application
 
 ## Project Overview
 
