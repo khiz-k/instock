@@ -1,6 +1,6 @@
 # InStock 
 
-Inventory management system in the form of a web application.
+Inventory management system in the form of a web application.  Live version has deleting functionality disabled, feel free to run locally to test that.
 
 ![Website example](/instock.gif)
 
