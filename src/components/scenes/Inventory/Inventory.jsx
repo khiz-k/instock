@@ -10,7 +10,7 @@ export default class Inventory extends Component {
   };
   componentDidMount() {
     axios
-      .get("http://khiz-instock-backend.herokuapp.com/inventory")
+      .get("https://khiz-instock-backend.herokuapp.com/inventory")
       .then((res) => {
         this.setState({
           inventory: [res.data],
@@ -20,7 +20,7 @@ export default class Inventory extends Component {
   updateItems = () => {
     setTimeout(() => {
       axios
-        .get("http://khiz-instock-backend.herokuapp.com/inventory")
+        .get("https://khiz-instock-backend.herokuapp.com/inventory")
         .then((res) => {
           this.setState({
             inventory: [res.data],

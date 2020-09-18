@@ -10,8 +10,9 @@ export default class Warehouses extends Component {
     mobile: false,
   };
   componentDidMount() {
+    // /inventory needs to be replaced with warehouses and its respective info to fill the table rows
     axios
-      .get("http://khiz-instock-backend.herokuapp.com/warehouses")
+      .get("https://khiz-instock-backend.herokuapp.com/warehouses")
       .then((res) => {
         this.setState({
           warehouses: [res.data],
@@ -21,7 +22,7 @@ export default class Warehouses extends Component {
   updateWarehouses = () => {
     setTimeout(() => {
       axios
-        .get("http://khiz-instock-backend.herokuapp.com/warehouses")
+        .get("https://khiz-instock-backend.herokuapp.com/warehouses")
         .then((res) => {
           this.setState({
             warehouses: [res.data],

@@ -19,7 +19,7 @@ class ItemDetails extends Component {
     let itemId = this.props.match.params.id;
 
     axios
-      .get(`http://khiz-instock-backend.herokuapp.com/inventory/${itemId}`)
+      .get(`https://khiz-instock-backend.herokuapp.com/inventory/${itemId}`)
       .then((res) => {
         this.setState({
           item: [res.data],

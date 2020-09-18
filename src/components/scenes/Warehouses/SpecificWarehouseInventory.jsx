@@ -13,7 +13,7 @@ export default class SpecificWarehouseInventory extends Component {
     // specific warehouse id to replace W4
     axios
       .get(
-        `http://khiz-instock-backend.herokuapp.com/warehouses/${this.props.match.params.id}`
+        `https://khiz-instock-backend.herokuapp.com/warehouses/${this.props.match.params.id}`
       )
       .then((res) => {
         this.setState({
@@ -27,7 +27,7 @@ export default class SpecificWarehouseInventory extends Component {
     setTimeout(() => {
       axios
         .get(
-          `http://khiz-instock-backend.herokuapp.com/warehouses/${this.props.match.params.id}`
+          `https://khiz-instock-backend.herokuapp.com/warehouses/${this.props.match.params.id}`
         )
         .then((res) => {
           this.setState({
