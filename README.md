@@ -2,7 +2,7 @@
 
 Inventory management system in the form of a web application.  
 
-Live version has deleting functionality disabled, feel free to run locally to test that (example):
+Clone, npm i the back-end and front-end, then npm start both to test it locally.  Really easy.
 
 ![Website example](/instock.gif)
 
