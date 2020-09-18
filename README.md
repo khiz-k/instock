@@ -2,7 +2,7 @@
 
 Inventory management system in the form of a web application.  
 
-Live version has deleting functionality disabled, feel free to run locally to test that.
+Live version has deleting functionality disabled, feel free to run locally to test that (example):
 
 ![Website example](/instock.gif)
 
