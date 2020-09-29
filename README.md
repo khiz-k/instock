@@ -13,12 +13,11 @@ Task is to work with an assigned team to develop an inventory management system 
 You and your team will be building a web application called ‘InStock’ from the ground-up, and a project manager has already set up a JIRA board with the required tasks outlined. You will need to assign different tasks to each team member and manage your code base to collaborate together effectively.
 </p>
 
-
-
-
-![Website example](/instock.gif)
+<p align="center">
+  <img  src="/instock.gif" alt="Website Example"/>
+</p>
   
-Local Example:
-Clone, npm i the back-end and front-end, then npm start both to test it locally.  Really easy.
+### Local Example:
+- Clone, npm i the back-end and front-end, then npm start both to test it locally.  Really easy.
 
 
