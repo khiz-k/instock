@@ -1,4 +1,5 @@
-<h1 align="center">InStock</h1>
+<h1 align="center">InStock 
+<p align="center">React&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Node&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Express&nbsp;&nbsp;&nbsp;</p></h1>
 <h4 align="center">Inventory management system in the form of a web application</h4>
 <h2 align="center">Project Overview</h2>
 <p align="center">
@@ -13,7 +14,6 @@ You and your team will be building a web application called ‘InStock’ from t
   <a href="https://github.com/khiz-k/pseudo-clones/commits/master"><img src="https://img.shields.io/github/last-commit/khiz-k/instock.svg?style=plasticr"/></a>
 </h4>
 
-<p align="center">React&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Node&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Express&nbsp;&nbsp;&nbsp;</p>
 
 ![Website example](/instock.gif)
   
