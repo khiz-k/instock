@@ -18,6 +18,10 @@ You and your team will be building a web application called ‘InStock’ from t
 </p>
   
 ### Local Example:
-- Clone, npm i the back-end and front-end, then npm start both to test it locally.  Really easy.
+```
+1. Clone the repo and open locally in IDE of your choosing.
+2. npm install the back-end and front-end.
+3. npm start the back-end to run the server, then npm start the front-end to run the client.
+```
 
 
